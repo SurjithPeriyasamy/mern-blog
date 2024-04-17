@@ -1,40 +1,14 @@
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/projects",
-    element: <Projects />,
-  },
-  {
-    path: "/sign-in",
-    element: <SignIn />,
-  },
-  {
-    path: "/sign-up",
-    element: <SignUp />,
-  },
-]);
 function App() {
-  return <RouterProvider router={appRouter} />;
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  );
 }
 
 export default App;
