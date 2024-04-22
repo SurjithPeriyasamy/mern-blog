@@ -1,7 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
+import userRoutes from "./routes/user.route.js";
+import userAuth from "./routes/auth.route.js";
 dotenv.config();
 const app = express();
 mongoose
@@ -10,6 +11,13 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+//allows input as a json to the backend
+app.use(express.json());
+
 app.listen(3000, () => {
   console.log("Server Listening on 3000");
 });
+
+app.use("/api/user", userRoutes);
+app.use("/api/auth", userAuth);
