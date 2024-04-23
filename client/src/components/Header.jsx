@@ -5,17 +5,15 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import NavList from "./NavList";
 import { IoMdClose } from "react-icons/io";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex fixed w-full justify-between items-center py-2 px-5 border-b-4">
-      <div className="lg:text-xl text-base tracking-wide font-medium ">
-        <span className=" mr-1 bg-gradient-to-r from-indigo-600 to-pink-700 px-3 py-1 rounded-lg text-white ">
-          Surjith&apos;s
-        </span>
-        Blog
+    <div className="flex bg-white top-0 fixed w-full justify-between items-center py-2 px-5 border-b-4">
+      <div className="lg:text-xl text-base ">
+        <Logo />
       </div>
       <div className="w-1/6 sm:inline hidden">
         <SearchBar />
